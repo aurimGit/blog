@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import BlogList from "./components/BlogList";
+import AddBlog from "./components/AddBlog"
+import Category from "./components/Catergory";
+import Profile from "./components/Profile";
+import NotFound from "./components/NotFound";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Menu from "./components/Menu"
+import Navbar from "./Navbar";
+import PersonList from "./components/PersonList";
+import AddPerson from "./components/AddPerson";
+import Person from "./components/Person";
+import BlogPost from "./components/BlogPost";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Menu />} />
+          <Route path="/blogs" element={<BlogList />} />
+          <Route path="/addBlog" element={<AddBlog />} />
+          <Route path="/blog/view/:id" element={<BlogPost />} />
+          <Route path="/blog/edit/:id" element={<AddBlog />} />
+          <Route path="/persons" element={<PersonList />} />
+          <Route path="/addPerson" element={<AddPerson />} />
+          <Route path="/person/edit/:id" element={<AddPerson />} />
+          <Route path="/person/view/:id" element={<Person />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
