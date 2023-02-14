@@ -81,7 +81,7 @@ const AddPerson = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <textarea
+                    <input
                         type="text"
                         className="form-control col-4"
                         id="phoneNumber"
@@ -105,7 +105,7 @@ const AddPerson = () => {
                 </div>
             </form>
             <hr/>
-            <button className="btn btn-primary"><Link to="/persons">Back to List</Link></button>
+            <Link className="btn btn-primary" to="/persons">Back to List</Link>
         </div>
     )
 }

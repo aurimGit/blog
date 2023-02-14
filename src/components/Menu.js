@@ -1,8 +1,11 @@
+import './Menu.css';
 
 const hello = () => {
 
 return (
-    <h1>Hello this is the main menu of the website</h1>
+    <div>
+    <img src="images/logo.png" alt=""></img>
+    </div>
 )
 
 }

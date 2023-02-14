@@ -87,11 +87,12 @@ const AddBlog = () => {
                 <div className="form-group">
                     <textarea
                         type="text"
-                        className="form-control col-4"
+                        className="form-control col-5"
                         id="description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        placeholder="enter description"
+                        placeholder="Enter description"
+                        rows={7}
                     />
                 </div>
                 <div className="form-group">
@@ -115,27 +116,27 @@ const AddBlog = () => {
                     />
                 </div>
                 <div>
-                <div className="form-group">
-                    <label htmlFor="firstName">Author:</label>
-                    <select
-                        id="author"
-                        className="form-control"
-                        value={author}
-                        onChange={(e) => setAuthor(e.target.value)}
-                    >
-                        <option value="">-- Select an author --</option>
-                        {persons.map(person => (
-                            <option key={person.id} value={person.firstName}>{person.firstName}</option>
-                        ))}
-                    </select>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="firstName">Author:</label>
+                        <select
+                            id="author"
+                            className="form-control col-4"
+                            value={author}
+                            onChange={(e) => setAuthor(e.target.value)}
+                        >
+                            <option value="">-- Select an author --</option>
+                            {persons.map(person => (
+                                <option key={person.id} value={person.firstName}>{person.firstName}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <button className="btn btn-primary" onClick={(e) => saveBlog(e)}>Save</button>
                 </div>
             </form>
             <hr />
-            <button className="btn btn-primary"><Link to="/blogs">Back to List</Link></button>
+            <Link className="btn btn-primary" to="/blogs">Back to List</Link>
         </div>
     )
 }
